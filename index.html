@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="This is a dynamic exam system created using JavaScript">
+    <title>Dynamic Exam System</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="loader">
+        <div class="wheel"></div>
+    </div>
+
+    <div class="info-page">
+        <div class="box">
+            <div class="title"></div>
+            <div class="info">
+                <div class="tile" id="info-total">
+                    <div class="data"></div>
+                    <div class="text-1">Questions</div>
+                </div>
+                <div class="tile" id="info-time">
+                    <div class="data"></div>
+                    <div class="text-1">Minutes</div>
+                </div>
+            </div>
+            <div class="form">
+                <input id="name" type="text" placeholder="Your Name">
+                <input id="college" type="text" placeholder="Your College">
+            </div>
+            <div class="instructions">
+                <ul>
+                    <li style="color:red;">You can't take the exam twice and the exam will be auto submitted if the exam page is refreshed.</li>
+                    <li>There are <span id="total"></span> multiple choice questions.</li>
+                    <li>Once you click an option, you can't change it.</li>
+                    <li>You will get <span id="time"></span> minutes to finish the exam.</li>
+                    <li><span id="negMark"></span> mark will be deducted for each incorrect answer.</li>
+                </ul>
+            </div>
+            <div class="btns">
+                <button onclick="startExam();">Start Exam</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="filter">
+        <div class="confirm-box">
+            <div class="msg">Are you sure you want to submit?</div>
+            <div class="btns">
+                <button id="submit" onclick="submit();hideConfirmation();">Submit</button>
+                <button id="cancel" onclick="hideConfirmation();">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed-bar">
+        <div class="time">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="head">
+            <div class="title"></div>
+            <div class="time"></div>
+            <div class="hr"></div>
+        </div>
+        <div class="report">
+            <div class="marks">
+                <div class="data"></div>
+                <div class="text-1">Marks Obtained</div>
+            </div>
+            <div class="grid">
+                <div class="box" id="correct">
+                    <div class="p1"><i class="fa fa-check-square-o" aria-hidden="true"></i></div>
+                    <div class="p2">
+                        <div class="text-1">Correct</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+                <div class="box" id="incorrect">
+                    <div class="p1"><i class="fa fa-times" aria-hidden="true"></i></div>
+                    <div class="p2">
+                        <div class="text-1">Incorrect</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+                <div class="box" id="skipped">
+                    <div class="p1"><i class="fa fa-step-forward" aria-hidden="true"></i></div>
+                    <div class="p2">
+                        <div class="text-1">Skipped</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+                <div class="box" id="accuracy">
+                    <div class="p1"><i class="fa fa-shield" aria-hidden="true"></i></div>
+                    <div class="p2">
+                        <div class="text-1">Accuracy</div>
+                        <div class="data"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="questions">
+
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="foot">
+            <div class="submit-btn" onclick="showConfirmation();">
+                Submit
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    function get(paramName) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(paramName);
+    }
+    var dbScript = document.createElement("script");
+    dbScript.src = "Database/q"+get('examId')+".js";
+
+
+    dbScript.onload = function() {
+    var pageScript = document.createElement("script");
+    pageScript.src = "script.js";
+    pageScript.onerror = function() {
+        document.querySelector('.container').innerHTML='<div class="no-content-graphics"><div class="graphics"></div><div class="msg">Failed to load resources</div></div>';
+    };
+
+    document.body.appendChild(pageScript);
+    };
+
+    dbScript.onerror = function() {
+        document.querySelector('.container').innerHTML='<div class="no-content-graphics"><div class="graphics"></div><div class="msg">Failed to load data</div></div>';
+    };
+
+    document.body.appendChild(dbScript);
+</script>
+</body>
+</html>
