@@ -1,0 +1,721 @@
+.standard-btn{
+    display:inline-flex;
+    background: #0080ff;
+    color: #fff;
+    padding:10px 17px;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    font-size: 15px;
+    border-radius: 5px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.standard-btn:hover{
+    background: rgb(56, 165, 255);
+    transform: scale(0.95);
+}
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #010816;
+}
+
+/*loader srceen*/
+.loader-screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 999;
+}
+.loader-screen .spinner{
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 5px solid #f1f1f1;
+    border-top: 5px solid #0080ff;
+    border-bottom: 5px solid #0080ff;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/*info page*/
+.info-page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    background: #000;
+    display: none;
+}
+.info-page .info-box{
+    width: 100%;
+    max-width: 500px;
+    max-height: 100%;
+    background: #141720;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+.info-page .info-box::-webkit-scrollbar{
+    display: none;
+}
+.info-page .info-box .exam-title{
+    color: #ebebeb;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    font-size: 25px;
+    text-align: center;
+    padding:0 10px;
+    margin-top: 20px;
+}
+.info-page .info-box .exam-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding:0 20px;
+    margin-top: 20px;
+}
+.info-page .info-box .exam-info .tile{
+    background: #31394e;
+    color: #ebebeb;
+    display: flex;
+    align-items: baseline;
+    border-radius: 7px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    transition: 0.3s;
+}
+.info-page .info-box .exam-info .tile:active{
+    transform: scale(0.95);
+}
+.info-page .info-box .exam-info .tile .data{
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    font-size: 30px;
+    margin: 10px;
+}
+.info-page .info-box .exam-info .tile .text-1{
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    font-size: 14px;
+    color: #d8d8d8;
+}
+.info-page .info-box .info-form{
+    padding:0 20px;
+    margin-top: 20px;
+}
+.info-page .info-box .info-form .form-input{
+    width: calc(100% - 40px);
+    height: 50px;
+    padding:0 20px;
+    background: #333847;
+    border: none;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 16px;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+}
+.info-page .info-box .info-form .form-input#college{
+    margin-top: 12px;
+}
+.info-page .info-box .instructions{
+    color: #999;
+    padding: 0 50px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+}
+.info-page .info-box .instructions li{
+    margin-top: 10px;
+}
+.info-page .info-box .form-btns{
+    padding:0 20px;
+    text-align: right;
+    margin: 20px 0
+}
+
+
+/*submission confirm box*/
+.confirm-box-filter{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+}
+.confirm-box-filter .confirm-box{
+    width: 90%;
+    max-width: 500px;
+    background: #212636;
+    border-radius: 7px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    transform: scale(0.9);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.confirm-box-filter .confirm-box .msg{
+    padding:0 20px;
+    color: #fff;
+    font-size: 20px;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    margin-top: 20px;
+}
+.confirm-box-filter .confirm-box .btns{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding:0 10px;
+    margin:40px 0 20px 0;
+}
+.confirm-box-filter .confirm-box .btns .standard-btn{
+    margin-right: 10px;
+}
+.confirm-box-filter .confirm-box .btns .standard-btn#cancel{
+    background-color: #6d6d6d;
+    color: #fff;
+}
+.confirm-box-filter .confirm-box .btns .standard-btn#cancel:hover{
+    background: #7d7d7d;
+    transform: scale(0.95);
+}
+
+
+
+
+/*main exam container*/
+.container{
+    margin: auto;
+    max-width: 600px;
+    margin-bottom: 150px;
+}
+
+/*exam info area*/
+.container .head .title{
+    color: #f8f8f8;
+    font-size: 22px;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    text-align: center;
+    padding:0 20px;
+    margin-top: 24px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.container .head .time{
+    color: #c8c8c8;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    padding:0 10px;
+    font-size: 15px;
+    margin: 12px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .head .time i{
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.container .hr{
+    margin:0 20px;
+    height: 1px;
+    background: linear-gradient(to right, #555, #e0e0e0, #555);
+}
+
+
+
+/*Exam report*/
+.container .report{
+    display: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.container .report .marks{
+    text-align: center;
+}
+.container .report .marks:active .data{
+    transform: scale(1.1);
+}
+.container .report .marks .data{
+    color: #00d026;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px 15px 10px 15px;
+    transition: 0.3s;
+}
+.container .report .marks .text-1{
+    color: #b2b2b2;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    font-size: 15px;
+}
+.container .report .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.container .report .grid .box{
+    background: #1e2330;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    transition: 0.3s;
+}
+.container .report .grid .box:active{
+    transform: scale(0.95);
+}
+.container .report .grid .box .p1{
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    margin: 10px 15px 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+.container .report .grid .box#correct .p1{
+    background: rgba(129, 255, 129, 0.104);
+    color: rgb(0, 203, 0);
+}
+.container .report .grid .box#incorrect .p1{
+    background: rgba(255, 129, 129, 0.104);
+    color: rgb(210, 0, 0);
+}
+.container .report .grid .box#skipped .p1{
+    background: rgba(129, 230, 255, 0.104);
+    color: rgb(0, 183, 229);
+}
+.container .report .grid .box#accuracy .p1{
+    background: rgba(186, 129, 255, 0.104);
+    color: rgb(122, 13, 255);
+}
+.container .report .grid .box .p2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container .report .grid .box .p2 .data{
+    color: #fff;
+    font-size: 25px;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    margin-top: 7px;
+}
+.container .report .grid .box .p2 .text-1{
+    color: #999;
+    font-size: 15px;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+}
+
+
+
+/*Exam questions*/
+.container .questions{
+    margin-top: 16px;
+    margin-bottom: 24px;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 12px;
+}
+
+/*report card*/
+.container .questions .report-card{
+    background: #161923;
+    color: #f6f6f6;
+    border-radius: 8px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.container .questions .report-card .top-part{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 16px;
+    margin-top: 16px;
+}
+.container .questions .report-card .top-part .qLabel{
+    background: #2c3246;
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    color: #dfdfdf;
+}
+.container .questions .report-card .top-part .qStatus{
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    font-size: 16px;
+}
+
+.container .questions .report-card .top-part .qStatus .corr{
+    color: #00b922;
+}
+.container .questions .report-card .top-part .qStatus .incr{
+    color: #b90000;
+}
+.container .questions .report-card .top-part .qStatus .blank{
+    color: #afafaf;
+}
+
+.container .questions .report-card .question{
+    color: #f6f6f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 20px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.container .questions .report-card .options{
+    padding:0 12px;
+    margin: 16px 0;
+}
+.container .questions .report-card .options .option{
+    display: flex;
+    align-items: start;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.container .questions .report-card .options .option:active{
+    background: #2c3246;
+}
+.container .questions .report-card .options .option .p1{
+    width: 40px;
+}
+.container .questions .report-card .options .option .p1 .radio{
+    width: 30px;
+    aspect-ratio: 1 / 1;
+    outline: 1px solid #555;
+    color: #999;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    transition: 0.3s;
+}
+.container .questions .report-card .options .option .p2{
+    font-size: 17px;
+    padding: 5px 10px 0 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #999;
+}
+
+/*for correct question*/
+.container .questions .report-card .options .option.correct{
+    background: rgba(2, 255, 2, 0.119);
+}
+.container .questions .report-card .options .option.correct .p1 .radio{
+    outline: 1px solid #00b922;
+    color: #00b922;
+}
+.container .questions .report-card .options .option.correct .p2{
+    color: #eaeaea;
+}
+.container .questions .report-card .options .option.correct .p2 #tick{
+    color: #00b922;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+/*for incorrect question*/
+.container .questions .report-card .options .option.incorrect{
+    background: rgba(255, 2, 2, 0.119);
+}
+.container .questions .report-card .options .option.incorrect .p1 .radio{
+    outline: 1px solid #b90000;
+    color: #b90000;
+}
+.container .questions .report-card .options .option.incorrect .p2{
+    color: #eaeaea;
+}
+.container .questions .report-card .options .option.incorrect .p2 #cross{
+    color: #b90000;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+/*for blank questions*/
+.container .questions .report-card .options .option.correct-w .p1 .radio{
+    outline: 1px solid #00b922;
+    color: #00b922;
+}
+.container .questions .report-card .options .option.correct-w .p2{
+    color: #00b922;
+}
+.container .questions .report-card .options .option.correct-w .p2 #tick{
+    color: #00b922;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+/*exam card*/
+.container .questions .exam-card{
+    background: #161923;
+    color: #f6f6f6;
+    border-radius: 8px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.container .questions .exam-card .top-part{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 16px;
+    margin-top: 16px;
+}
+.container .questions .exam-card .top-part .qLabel{
+    background: #2c3246;
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    color: #dfdfdf;
+}
+.container .questions .exam-card .question{
+    color: #f6f6f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 20px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.container .questions .exam-card .options{
+    padding:0 12px;
+    margin: 16px 0;
+}
+.container .questions .exam-card .options .option{
+    display: flex;
+    align-items: start;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.container .questions .exam-card .options .option:active{
+    background: #2c3246;
+}
+.container .questions .exam-card .options .option .p1{
+    width: 40px;
+}
+.container .questions .exam-card .options .option .p1 .radio{
+    width: 30px;
+    aspect-ratio: 1 / 1;
+    outline: 1px solid #989898;
+    color: #d8d8d8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    transition: 0.3s;
+}
+.container .questions .exam-card .options .option .p2{
+    font-size: 17px;
+    padding: 5px 10px 0 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0;
+}
+
+/*after answering the question*/
+.container .questions .exam-card.answered{
+    pointer-events: none;
+}
+.container .questions .exam-card.answered .option .p1 .radio{
+    color: #999;
+    outline: 1px solid #555;
+}
+.container .questions .exam-card.answered .option .p2{
+    color: #999;
+}
+.container .questions .exam-card.answered .option.answered .p1 .radio{
+    color: #f6f6f6;
+    outline: 1px solid #0080ff;
+    background: #0080ff;
+}
+.container .questions .exam-card.answered .option.answered .p2{
+    color: #f6f6f6;
+}
+
+
+
+/*container footer*/
+.container .foot{
+    display: flex;
+    justify-content: center;
+    padding: 0 16px;
+    margin-top: 24px;
+}
+.container .foot #submit-btn{
+    display: none;
+}
+
+
+/*fixed bottom bar*/
+.fixed-bar{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    background: #12151d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top:1px solid #333;
+    display: none;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2)
+}
+.fixed-bar .time{
+    color: #fff;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"GRAD" 0;
+    display:flex;
+    align-items: center;
+    font-size: 15px;
+}
+.fixed-bar .time i{
+    font-size: 25px;
+    margin-right: 10px;
+    color: #555;
+}
