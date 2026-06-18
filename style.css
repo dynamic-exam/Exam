@@ -400,6 +400,10 @@ body{
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 .container .report-card-filter .option:active{
     background: var(--card-4-dark);
