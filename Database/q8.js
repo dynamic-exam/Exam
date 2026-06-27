@@ -69,8 +69,7 @@ var questions = [
             '$\\{-1, -2, -3, -4\\}$'
         ],
         corrAns: 3,
-        explanation:`<img width="100%" src="https://uttoron.academy/media/Images/Question/39th-bcs/12.jpg">
-        $x = -1, -2, -3, -4$ হলে,<br>
+        explanation:`$x = -1, -2, -3, -4$ হলে,<br>
         এখানে, $(-1)^{2} < 18, (-2)^{2} < 18, (-3)^{2} < 18, (-4)^{2} < 18$<br>
         কিন্তু $(-5)^{2} \\nless 18$<br>
         $\\therefore C = {-1, -2, -3, -4}$
