@@ -14,7 +14,11 @@ var questions = [
             '$9$'
         ],
         corrAns: 1,
-        explanation:'<img width="100%" src="https://uttoron.academy/media/Images/Question/39th-bcs/1.png">'
+        explanation:`$125(\\sqrt{5})^{2x} = 1 \\Rightarrow 5^{3}(\\sqrt{5})^{2x}=1$<br>
+$\\Rightarrow 5^{3}.5^{2x.\\frac{1}{2}}=1$<br>
+$\\Rightarrow 5^{3+x}=5^{0} \\Rightarrow 3+x=0$<br>
+$\\therefore x=-3$
+`
     },
     {
         question: '$\\mathrm {n_{C_{12}}} = \\mathrm {n_{C_{6}}}$ হলে $n$ এর মান কত?',
