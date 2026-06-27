@@ -69,7 +69,12 @@ var questions = [
             '$\\{-1, -2, -3, -4\\}$'
         ],
         corrAns: 3,
-        explanation:'<img width="100%" src="https://uttoron.academy/media/Images/Question/39th-bcs/12.jpg">'
+        explanation:`<img width="100%" src="https://uttoron.academy/media/Images/Question/39th-bcs/12.jpg">
+        $x = -1, -2, -3, -4$ হলে,<br>
+        এখানে, $(-1)^{2} < 18, (-2)^{2} < 18, (-3)^{2} < 18, (-4)^{2} < 18$<br>
+        কিন্তু $(-5)^{2} \\nless 18$<br>
+        \\therefore C = {-1, -2, -3, -4}
+        `
     },
     {
         question: 'একটি আয়তক্ষেত্রের দৈর্ঘ্য 18 সেমি. এবং প্রস্থ 10 সেমি.। আয়তক্ষেত্রটির দৈর্ঘ্য বৃদ্ধি করে 25 সেমি. করা হলো। আয়তক্ষেত্রটির প্রস্থ কত হলে ক্ষেত্রফল অপরিবর্তিত থাকবে?',
