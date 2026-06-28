@@ -68,7 +68,39 @@ $\\therefore x=-3$
             '$-{ {3} \\over 2} \\mathrm {< x}\\leq1$'
         ],
         corrAns: 0,
-        explanation:'<img width="100%" src="https://uttoron.academy/media/Images/Question/39th-bcs/8.png">'
+        explanation:`$2x^{2}+5x+3<0$ <br>
+$\\Rightarrow 2x^{2}+3x+2x+3<0$ <br>
+$\\Rightarrow x(2x+3)+1(2x+3)<0$ <br>
+$\\Rightarrow (x+1)(2x+3)<0$ <br>
+$(x+1)$ $(2x+3)$ এর যেকোনো একটির মান ঋনাত্মক হলে অসমতাটি সত্য হবে।<br><br>
+
+<table border="1" cellspacing="0" cellpadding="3px">
+<tr align="center">
+<td>যখন</td>
+<td>$(x+1)$ এর চিহ্ন</td>
+<td>$(2x+1)$ এর চিহ্ন</td>
+<td>$(x+1)(2x+1)$ এর চিহ্ন</td>
+</tr>
+<tr align="center">
+<td>$x<\\frac{-3}{2}$</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr align="center">
+<td>$\\frac{-3}{2}<x<-1$</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+</tr>
+<tr align="center">
+<td>$x>-1$</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+</table><br><br>
+$\\therefore নির্ণেয় অসমতা: \\frac{-3}{2}x<-1$`
     },
     {
         question: '$\\mathrm {c={\\{x:x}}$ ঋণাত্মক পূর্ণসংখ্যা এবং $\\mathrm {x^{2}<18\\}}$; $c$ সেটের উপাদানগুলো হবে-',
