@@ -161,7 +161,15 @@ $\\therefore$ নির্ণেয় সমাধান: $0 \\lt x \\lt 1$`
             '১২তম পদ'
         ],
         corrAns: 0,
-        explanation:'<img width="100%" src="https://uttoron.academy/media/Images/Question/39th-bcs/21.jpg">'
+        explanation:`প্রথম পদ $a=\\frac{1}{\\sqrt{2}}$<br>
+সাধারণ অনুপাত $r=\\frac{1}{\\frac{1}{\\sqrt{2}}}=\\sqrt{2}$<br>
+ধরি, $n$ তম পদ হবে $8\\sqrt{2}$<br>
+$\\therefore ar^{n-1}=8\\sqrt{2}$<br>
+$\\Rightarrow \\frac{1}{\\sqrt{2}}(\\sqrt{2})^{n-1}=8\\sqrt{2}$<br>
+$\\Rightarrow (\\sqrt{2})^{n-1}=16$<br>
+$\\Rightarrow (\\sqrt{2})^{n-1}=(\\sqrt{2})^{8}$<br>
+$\\Rightarrow n-1 = 8$<br>
+$\\therefore n=9$`
     },
     {
         question: 'একটি দ্রব্য 180 টাকায় বিক্রয় করায় 10% ক্ষতি হলো। দ্রব্যটির ক্রয়মূল্য-',
