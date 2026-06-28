@@ -137,7 +137,20 @@ $\\therefore$ নির্ণেয় অসমতা: $\\frac{-3}{2} \\lt x \\lt 
             '$\\mathrm {-1 < x <1 }$'
         ],
         corrAns: 2,
-        explanation:'<img width="100%" src="https://uttoron.academy/media/Images/Question/39th-bcs/15.png">'
+        explanation:`$|1-2x| \\lt 1$<br>
+অঋনাত্মক হলে,<br>
+$1-2x \\lt 1$<br>
+$\\Rightarrow -2x \\lt 0$<br>
+$\\Rightarrow 2x \\gt 0$<br>
+$\\therefore x \\gt 0$<br>
+ঋনাত্মক হলে,<br>
+$-(1-2x) \\lt 1$<br>
+$1-2x \\gt -1$<br>
+$-2x \\gt -1-1$<br>
+$-2x \\gt -2$<br>
+$2x \\lt 2$<br>
+$\\therefore x \\lt 1$<br>
+$\\therefore$ নির্ণেয় সমাধান: $0 \\lt x \\lt 1$`
     },
     {
         question: '$1\\over {\\sqrt{2} {\\mathrm {}}}$, $1$, ${\\sqrt{2} {\\mathrm {}} }$ ... ... ধারাটির কোন পদ $\\mathrm 8{\\sqrt2}$ হবে?',
