@@ -1,0 +1,19 @@
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+  sheet.appendRow([
+    e.parameter.name,
+    e.parameter.college,
+    e.parameter.obtained,
+    e.parameter.correct,
+    e.parameter.incorrect,
+    e.parameter.skipped,
+    e.parameter.accuracy,
+    e.parameter.ansScript,
+    new Date()
+  ]);
+
+  return ContentService
+    .createTextOutput("OK")
+    .setMimeType(ContentService.MimeType.TEXT);
+}
