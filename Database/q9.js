@@ -1,7 +1,7 @@
 var title = 'Botany Chapter 1 : Cell & Its Structure';
 var time = 15;
 var mark = 1;
-var negMark = 0.5;
+var negMark = 0.25;
 var opLabel = ['A', 'B', 'C', 'D'];
 var sheet = 'https://script.google.com/macros/s/AKfycbzPG-S6NKxIGao1SH1RWs4DBuo9FJQAxpPRmHXDw2oI0iuEfIw4axckGGyVIkRPmSYNng/exec';
 var questions = [
