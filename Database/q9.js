@@ -1,4 +1,4 @@
-var title = 'Botany chapter 1 : Cell & Its Structure';
+var title = 'Botany Chapter 1 : Cell & Its Structure';
 var time = 15;
 var mark = 1;
 var negMark = 0.5;
